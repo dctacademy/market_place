@@ -1,0 +1,20 @@
+<h3><%= @category.name %></h3>
+
+<% if @category.courses.empty? %>
+	<p>No course found for this category</p>
+<% else %>
+	<ol>
+		<% @category.courses.each do |course| %>
+			<li><%= link_to course.name, course_path(course) %></li>
+		<% end %>
+	</ol>
+<% end %>
+
+
+<% if (user_signed_in?) && (can? :update, @category) %>
+	<%= link_to "edit", edit_category_path(@category) %> | 
+<% end %>
+
+<% if (user_signed_in?) && (can? :destroy, @category) %>
+	<%= link_to "destroy", category_path(@category), method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>

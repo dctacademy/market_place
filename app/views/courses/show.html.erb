@@ -5,6 +5,17 @@
   <%= @course.name %>
 </p>
 
+<p>
+  <strong>Category:</strong>
+  <%= link_to @course.category.name, category_path(@course.category_id) %>
+</p>
+
+<p>
+	<strong>Trainer: </strong>
+	<%= link_to @course.user.first_name, profile_path(@course.user.profile.id) %>
+</p>
+
+
 <% if can? :update, @course %>
 	<%= link_to 'Edit', edit_course_path(@course) %> |
 <% end %>

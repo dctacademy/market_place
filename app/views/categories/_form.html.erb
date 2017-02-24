@@ -1,0 +1,20 @@
+<%= form_for @category do |f| %>
+
+<% if @category.errors.any? %> 
+	<h3>These errors prohibitted the form from being saved: </h3>
+	<ul>
+		<% @category.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= f.label :master_category %><br/>
+<%= f.collection_select :master_category_id, MasterCategory.all, :id, :name, prompt: "Select Master Category" %> <br/>
+
+<%= f.label :name %><br/>
+<%= f.text_field :name %><br/>
+
+<%= f.submit "Submit" %>
+
+<% end %>

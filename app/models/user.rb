@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :courses
+  has_one :profile
 
   # has_many :join_table
   # has_many :associated_table, through: :join_table

@@ -6,4 +6,8 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do 
   	redirect_to root_path, notice: "Page doesn't exist"
   end
+
+  rescue_from ActiveRecord::RecordNotFound do 
+			redirect_to root_path, notice: "Record Not Found"
+		end
 end

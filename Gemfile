@@ -7,6 +7,7 @@ gem 'rails', '4.2.7.1'
 gem 'sqlite3'
 gem 'pry'
 gem 'cancancan'
+gem 'faker'
 
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 #gem 'devise', '~>3.3.0'

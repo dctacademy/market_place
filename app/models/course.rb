@@ -3,6 +3,8 @@ class Course < ActiveRecord::Base
 	belongs_to :user
 
 	validates_presence_of :name, message: "You should give a name"
+	validates_presence_of :category_id
+	
 	#validates_length_of :name, within: 2..10
 
 
